@@ -1,0 +1,44 @@
+---
+title: Quick start
+description: In aceasta sectiune vei gasi cateva informatii utile despre cum sa incepi un proiect cu React JS.
+---
+
+## Crearea proiectului
+
+Primul pas pentru a incepe dezvoltarea folosind React JS este crearea unui proiect.
+
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+
+<DynamicCodeBlock
+  lang='js'
+  code={'npm create vite@latest'}
+/>
+
+Dupa executarea comenzii intr-un terminal se va crea un proiect simplu, pe care il vom folosi ca baza pentru ce urmeaza sa construim.
+
+<Cards>
+  <Card
+    title='Documentatie Vite'
+    href='https://vite.dev/guide/'
+    external
+  />
+</Cards>
+
+## Adaugarea unui package pentru routing management
+
+Ne dorim sa putem avea continutul distribuit in pagini diferite, de aceea avem nevoie de un package care sa se ocupe de managementul rutelor in cadrul proiectului.
+
+<DynamicCodeBlock
+  lang='js'
+  code={'npm i react-router'}
+/>
+
+##
+
+<Cards>
+  <Card
+    title='Documentatie React Router'
+    href='https://reactrouter.com/start/library/installation'
+    external
+  />
+</Cards>
