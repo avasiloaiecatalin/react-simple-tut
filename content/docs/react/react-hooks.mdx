@@ -1,0 +1,94 @@
+---
+title: React hooks
+---
+
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+
+      # useState
+
+      <DynamicCodeBlock
+        lang='js'
+        code={`import { useState } from 'react';
+
+import { Button } from '../../ui/button';
+
+export const UseStateExample = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <p>Count: {count}</p>
+      <div className='flex gap-4'>
+        <Button onClick={() => setCount(count - 1)}>Decrement</Button>
+        <Button onClick={() => setCount(count + 1)}>Increment</Button>
+      </div>
+    </>
+  );
+};`}
+      />
+      #
+            # useEffect
+
+      <DynamicCodeBlock
+        lang='js'
+        code={`import { Button } from '@/components/ui/button';
+
+import { useState, useEffect } from 'react';
+
+export const UseEffectExample = () => {
+  const [seconds, setSeconds] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+
+useEffect(() => {
+let interval = null;
+if (isRunning) {
+interval = setInterval(() => {
+setSeconds((seconds) => seconds + 1);
+}, 1000);
+} else if (!isRunning && seconds !== 0) {
+clearInterval(interval);
+}
+return () => clearInterval(interval);
+}, [isRunning, seconds]);
+
+const toggleTimer = () => {
+setIsRunning(!isRunning);
+};
+
+const resetTimer = () => {
+setSeconds(0);
+setIsRunning(false);
+};
+
+return (
+
+<div>
+  <p>Timer: {seconds} seconds</p>
+  <div className='flex gap-2'>
+    <Button onClick={toggleTimer}>{isRunning ? 'Pause' : 'Start'}</Button>
+    <Button onClick={resetTimer}>Reset</Button>
+  </div>
+</div>
+); };`} />
+
+      #
+      # useState vs. useEffect
+      #
+      ## Cu ce se ocupa?
+      #### <b>useState:</b> Se ocupa de starea locala a componentelor.
+      #### <b>useEffect:</b> Gestioneaza efecte secundare.
+      #
+      ## Cand se apeleaza?
+      #### <b>useState:</b> Se apeleaza in timpul randarii componentei pe ecran.
+      #### <b>useEffect:</b> Se apeleaza dupa ce componenta a fost randata pe ecran.
+      #
+      ## La ce se foloseste?
+      #### <b>useState:</b> Pentru a stoca si actualiza date intr-o componenta.
+      #### <b>useEffect:</b> Pentru operatii care au efecte secundare (ex.: Fetch de date, modificari in strcutura paginii).
+      #
+      # Other React hooks
+      <Cards>
+        <Card
+          title='React Hooks Explained Simply'
+          href='https://daily.dev/blog/react-hooks-explained-simply'
+        />
+      </Cards>
