@@ -3,77 +3,15 @@ title: Async / Await
 description: Conceptul de Async / Await este foarte important in programarea JavaScript. De aceea il vom descrie mai pe larg aici.
 ---
 
-import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+Async/await e ca si cum ai trimite un prieten sa-ti cumpere pizza in timp ce tu continui sa faci alte lucruri.
 
-## var
+`Async` ii spune prietenului tau: 'Hei, du-te si adu pizza, dar nu ma bloca. Pot face alte lucruri intre timp.'
 
-`var` e considerat global doar daca nu e declarat in interiorul unei functii.
+`Await` e ca si cum ai spune: 'OK, acum chiar am nevoie de pizza aia. Voi astepta aici pana o aduci.
 
-<DynamicCodeBlock
-  lang='js'
-  code='var a = "hi";
-    function newFunction() {
-        var b = "hello";
-    }
-    console.log(b); // error: b is not defined'
-/>
-
-`var` poate fi redeclarat / modificat:
-
-<DynamicCodeBlock
-  lang='js'
-  code='var a = "hi";
-    var a = "hello";
-    //
-    var a = "hey hi";
-    a = "hello";'
-/>
-
-## let
-
-<DynamicCodeBlock
-  lang='js'
-  code='let a = "hi";
-  let x = 4;
-
-if (x > 3) {
-let b = "hello";
-console.log(b);// "hello"
-}
-
-console.log(b) // b is not defined'
-/>
-
-`let` poate fi modificat, dar nu redeclarat:
-
-<DynamicCodeBlock
-  lang='js'
-  code='let a = "hi";
-    a = "hello";'
-/>
-
-<DynamicCodeBlock
-  lang='js'
-  code='let a = "hi";
-    let a = "hello"; // error: Identifier a has already been declared'
-/>
-
-Totusi, daca il declari in blocuri diferite, e ok:
-
-<DynamicCodeBlock
-  lang='js'
-  code='let a = "hi";
-    if (true) {
-        let a = "hello";
-        console.log(a); // "hello"
-    }
-    console.log(a); // "hi"'
-/>
-
-## const
-
-<DynamicCodeBlock
-  lang='js'
-  code='const a = "hi";
-    a = "hello";// error: Assignment to constant variable.'
-/>
+<Cards>
+  <Card
+    title='[Youtube] JavaScript ASYNC/AWAIT is easy! ⏳'
+    href='https://youtu.be/9j1dZwFEJ-c'
+  />
+</Cards>
